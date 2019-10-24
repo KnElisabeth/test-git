@@ -1,0 +1,139 @@
+URL : codepile.net/pile/dwm12js
+CODE PILE . NET / PILE / DWM 12 JS 
+
+// Pour charger un fichier javascript :
+<script src="js/script.js"></script>
+
+// Permet d'afficher un message.
+console.log("Le JavaScript, c'est génial !");
+
+// Créer une variable en JS : 
+let fruit = "citron";
+// Pour modifier le contenu d'un let :
+fruit = "pomme";
+/!\ ATTENTION : une variable ne peut pas être redéclarée /!\
+
+// Créer une constante en JS : 
+const vegetable = "carotte";
+/!\ ATTENTION : une constante ne peut ni être redéclarée, ni être modifiée /!\
+
+// Afficher le contenu d'une variable :
+console.log(votreVariable);
+
+// Créer un array :
+const list = [];
+/!\ Attention : dans un array, on commence à compter à partir de 0. Le second élément d'un array aura pour clef : 1 /!\
+
+// Afficher une donnée spécifique d'un array (par exemple, le premier) :
+console.log(list[0]);
+
+// Supprimer le deuxième élément d'un array :
+list.splice(1, 0)
+
+// Concaténer une variable avec une string :
+let fruit = "citron";
+console.log(`Mon fruit préféré est : ${fruit}`);
+
+
+
+
+////////////////////////////////// CONDITIONS 
+
+// Cette condition permet de vérifier l'égalité (ou non) d'une variable. Par exemple, si une variable est égale à "rouge", alors on exécutera une action.
+let color = "rouge";
+
+if(color == "rouge") {
+    console.log("La couleur est bien rouge !");
+}
+
+// Variante qui permet de dire SINON SI :
+if(color == "rouge") {
+    console.log("Cette robe est bien rouge !");
+} else if(color == "bleu") {
+    console.log("Finalement, cette robe est bleue");
+}
+
+// A nouveau, pour désigner une réponse qui n'est pas dans un if ou un elseif, nous avons ELSE, pour dire SINON :
+let color = "blanc"
+
+if(color == "blanc") {
+    console.log("Le blanc, c'est chouette !");
+} else if(color == "noir") {
+    console.log("Le noir, c'est classe !");
+} else {
+    console.log("Aucune des deux valeurs n'a été choisi, on va considérer que tu aimes le gris.");
+}
+
+
+//////////////////////////////// BOUCLES
+
+for() {
+
+}
+
+foreach();
+
+while();
+
+
+//////////////////////// CIBLER UN OU DES ÉLÉMENTS DANS LE DOM :
+Pour sélectionner tout le DOM : taper document dans votre console (ou dans votre JS)
+
+/* Un ID */ : document.getElementById("nom de l'ID");
+/* Une class */ : document.getElementsByClassName("nom de la class");
+
+Seconde méthode générale
+    - /* Un ID */ : document.querySelector("#nom de l'ID");
+    - /* Une class */ : document.querySelector(".nom de la class");
+    - /* Une balise en particulier */ : document.querySelector("nom de l'élément recherché");
+/!\ ATTENTION : cette méthode ne permet de sélectionner que le premier élément, que ce soit en ciblant une class ou un élément qui existe en plusieurs exemplaires (plusieurs <p>, plusieurs <li>, etc) /!\
+Pour palier ceci ==> 
+    document.querySelectorAll(".nom de la class"); ==> 
+        // Cela donnera un array, à vous de sélectionner le bon élément.
+
+
+//// Event listeners
+
+// Permet, au clic sur l'élément qui porte l'ID "title", de pouvoir alterner entre ajout / suppression d'une classe que l'on appliquera sur un <p>. Cette classe se nomme "modified-title"
+document.querySelector("#title").addEventListener("click", () => {
+    document.querySelectorAll("p")[0].classList.toggle("modified-title");
+});
+
+/* Micro TP1 + Correction : 
+    Vous allez devoir créer un input type="text" ainsi qu'un button. Lorsque vous cliquerez sur le button, vous devrez faire un console.log() de la valeur de l'input. Par exemple, si je tape "toto" dans l'input et que j'appuie sur le button, le console.log() contiendra "toto".
+Correction :
+document.querySelector("#myButton").addEventListener("click", () => {
+    console.log(document.querySelector("input").value);
+});
+(En ayant un <button>, par exemple, qui possèdera l'ID "myButton" ainsi qu'un <input type="text" pour recueillir les données écrites)
+*/
+
+/* Micro TP2
+    Vous allez devoir créer un event listener qui permettra, quand la souris passe sur un <ul>, de lui appliquer du CSS. Lorsque la souris quitte cet élément, vous devrez rendre l'état d'origine de cet élément. (Par exemple : la souris passe dessus ==> tout est en vert. La souris quitte l'élément ==> tout redevient normal)
+*/
+
+/* Micro TP3
+    Vous allez devoir faire en sorte de créer par exemple deux <button> qui devront, au clic, CACHER une balise <p>, ou la faire réapparaître au nouveau clic. Chaque <button> permet de cacher/ faire réaparraître un <p> différent.
+*/
+
+/* Micro TP4
+    Vous allez devoir faire en sorte, lors d'un clic sur un élément spécifique (genre un <button>), de changer la couleur d'écriture de TOUS les éléments de votre HTML en rouge (ou bleu, ou comme vous voulez). Lorsque l'utilisateur clique à nouveau dessus, les couleurs redeviennent comme avant.
+*/
+
+/* Micro TP5
+    Vous allez devoir créer et utiliser une fonction qui devra permettre de poser deux questions à l'utilisateur, en lui demandant 2 chiffres. Une fois qu'il à répondu à vos deux questions, vous additionnez le tout, et vous l'affichez dans la console.
+    
+    Petit bonus : vous afficherez le résultat en remplaçant le contenu d'un <p>.
+*/
+
+/* Micro TP **
+    Vous devrez créer un event listener qui permettra d'appliquer du CSS sur UN <li> à la fois (qui sera celui sur lequel votre souris se situe).
+    Diffculté : cet event listener s'appliquera à tous les <li> mais ne s'appliquera que sur un seul à la fois.
+*/
+
+/* Micro TP ***
+    Vous allez devoir créer un event listener qui devra console.log() le textContent de chaque éléments sur lesquels vous allez CLIQUER.
+    
+    (Pour vous aider, en gros, lorsque vous cliquez sur un <p>, cela affichera automatiquement dans la console son contenu. Si vous le faites sur un <a>, aussi. Sur un <li>, aussi. Vous devrez trouver un moyen de savoir sur quoi vous cliquez.)Va
+*/
+

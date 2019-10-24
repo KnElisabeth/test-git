@@ -1,0 +1,35 @@
+.body{
+    color: red!important;
+}
+
+h1{
+    color: brown;
+    padding-left: 25px;
+}
+ul{
+    list-style:none;
+    color:blue;
+}
+
+#paragraph{
+    font-style: italic;
+}
+
+#debut{
+    background-color: crimson;
+    height: 100px;
+    width: 300px;
+}
+.classeEssai{
+    color: yellow;
+    font-style: italic;
+    font-size: 18px;
+}
+.ul-modified{
+    background-color: rebeccapurple;
+    color:white;
+    font-size:18px;
+}
+.p-hidden{
+    display:none;
+}
